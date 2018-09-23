@@ -28,20 +28,19 @@ $(document).ready(function () {
         var gifURL = response.data[i].images.original.url;
         var gifStill = response.data[i].images.original_still.url;
 
-      // Append gifs inside of a card body with template literals
+        // Append gifs inside of a card body with template literals
         newDiv.append(`
-      <div class="floatL text-center card border-success mb-3" style="max-width: auto;">
-         <div class="card-header bg-transparent border-success">${gifTitle.toUpperCase()}</div>
-         <div class="card-body text-success">
-             <h5 class="card-title">Rating: ${gifRating.toUpperCase()}</h5>
-             <p class="card-text"></p>
-             <img data-state="still" data-still="${gifStill}" data-animate="${gifURL}"class ="gif-img gifSize" src="${gifStill}">
-         </div>
-         <div class="card-footer bg-transparent border-success">       
-          <a href="${gifURL}" download="${pokemons[i]} gif">Download GIF (right click and choose save as)<i class="p-3 fas fa-arrow-circle-down"></i></a><br>Add
-         GIF to Favorites <i class="p-3 far fa-star"></i></div>
-        </div>
-      </div>`);
+          <div class="floatL text-center card border-success mb-3" style="max-width: auto;">
+            <div class="card-header bg-transparent border-success">${gifTitle.toUpperCase()}</div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Rating: ${gifRating.toUpperCase()}</h5>
+                  <p class="card-text"></p>
+                <img data-state="still" data-still="${gifStill}" data-animate="${gifURL}"class ="gif-img gifSize" src="${gifStill}">
+              </div>
+            <div class="card-footer bg-transparent border-success">       
+              <a href="${gifURL}" download="${pokemons[i]} gif">Download GIF (right click and choose save as)<i class="p-3 fas fa-arrow-circle-down"></i></a><br>Add GIF to Favorites <i class="p-3 far fa-star"></i></div>
+            </div>
+          </div>`);
       }
       $("#gif-view").append(newDiv);
     });
@@ -55,7 +54,7 @@ $(document).ready(function () {
       var button = $("<button>").addClass("gif-btn p-2 m-1 btn btn-dark btn").attr("data-name", pokemons[i]).text(pokemons[i]);
       $("#buttons-view").append(button);
     }
-   }
+  }
 
   function renderNewButtons() {
     $("#custom").empty();
@@ -66,14 +65,17 @@ $(document).ready(function () {
   }
 
   // Click event listener for new gif buttons
-  $("#add-gif").on("click", function (event) {
+  $(document.body).on("click", "#add-gif", function (event) {
     event.preventDefault();
     var pokemon = $("#gif-input").val().trim();
-    pokemons.push(pokemon);
-    renderNewButtons();
-    $('#gif-input').val("");
+    
+    if (pokemon === "") {
+      return pokemon;
+    }
+      pokemons.push(pokemon);
+      renderNewButtons();
+      pokemon.val("");
   });
-
 
   // Clear gifs on click
   $("#remove-gif").on("click", function () {
@@ -94,7 +96,6 @@ $(document).ready(function () {
     } else {
       $(this).attr("src", $(this).data("still"));
       $(this).attr("data-state", "still");
-    }
-
-  });
-});
+      }
+    });
+}); //Document.ready end
