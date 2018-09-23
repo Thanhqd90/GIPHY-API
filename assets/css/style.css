@@ -1,61 +1,31 @@
 body {
+    font-family: 'Bungee Inline', cursive;
     height: 100%;
     padding: 50px;
     padding-top: 0;
+    background: #ba2737;
+    background: -moz-linear-gradient(45deg, #ba2737 0%, #efc5ca 23%, #d24b5a 31%, #efc5ca 52%, #f18e99 66%, #f18e99 66%, #f18e99 73%, #d24b5a 89%, #d24b5a 100%);
+    background: -webkit-linear-gradient(45deg, #ba2737 0%, #efc5ca 23%, #d24b5a 31%, #efc5ca 52%, #f18e99 66%, #f18e99 66%, #f18e99 73%, #d24b5a 89%, #d24b5a 100%);
+    background: linear-gradient(45deg, #ba2737 0%, #efc5ca 23%, #d24b5a 31%, #efc5ca 52%, #f18e99 66%, #f18e99 66%, #f18e99 73%, #d24b5a 89%, #d24b5a 100%);
 }
 
-/* input box */
-#gif-search, #image-limit {
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 22px;
-}
-#image-limit {
-    width: 40px;
-}
-input[type=submit], .search-button{
-    margin-top: 10px;
-    border-radius: 10px;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 18px;   
-    margin-left: 10px;  
-    box-shadow: 0 0 10px black;
-    background-color: orange;
-}
-.search-button {
-    background-color: steelblue;
-}
-span {
-    
-    text-transform: uppercase;
-    width: 20px;
-    
-}
-input[type=submit]:hover {
-    background-color: orangered;
+.resize {
+    height: 50px;
+    width: 50px;
 }
 
-.input-form {
-    float: right;
-    max-width: 450px;
-    padding: 25px;
-    border: 5px solid black;
-    text-align: center;
+.gif-btn {
+    background: #cc0000;
+    background: -moz-linear-gradient(top, #cc0000 0%, #111111 48%, #fff2f2 100%);
+    background: -webkit-linear-gradient(top, #cc0000 0%,#111111 48%,#fff2f2 100%);
+    background: linear-gradient(to bottom, #cc0000 0%,#111111 48%,#fff2f2 100%);
 }
-p {
-    margin: 15px auto;
-    font-size: 20px;
-    font-weight: 700;
+.gifSize {
+    height: 250px;
+    width: 250px;
 }
 
-#results-container {
+.floatL {
     float: left;
-    margin-top: 20px;
-    max-width: 1080px;
-}
-.image-display {
-    float: left;
-    margin: 10px;
+    width: 50%;
 }
