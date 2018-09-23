@@ -25,6 +25,22 @@ body {
     width: 250px;
 }
 
+@media only screen and (max-width: 768px) {
+    .gifSize {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 420px) {
+
+    .gifSize {
+        height: 100px;
+        width: 100px;
+    }
+}
+
 .floatL {
     float: left;
     width: 50%;

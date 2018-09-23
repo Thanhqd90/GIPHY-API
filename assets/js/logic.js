@@ -71,6 +71,7 @@ $(document).ready(function () {
     var pokemon = $("#gif-input").val().trim();
     pokemons.push(pokemon);
     renderNewButtons();
+    $('#gif-input').val("");
   });
 
 
