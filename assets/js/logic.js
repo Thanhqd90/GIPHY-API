@@ -58,7 +58,7 @@ $(document).ready(function () {
 
   function renderNewButtons() {
     $("#custom").empty();
-    for (var i = 12; i < pokemons.length; i++) {
+    for (var i = 9; i < pokemons.length; i++) {
       var button = $("<button>").addClass("gif-btn p-2 m-1 btn btn-dark btn").attr("data-name", pokemons[i]).text(pokemons[i]);
       $("#custom").append(button);
     }
